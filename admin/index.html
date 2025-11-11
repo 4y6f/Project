@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="styling.css">
+</head>
+<body class="locked">
+  <div id="lock-overlay">
+    <div id="lock-box">
+      <h2>Admin Login</h2>
+      <input id="admin-password" type="password" placeholder="Password">
+      <button id="unlockBtn">Enter</button>
+      <div id="msg"></div>
+    </div>
+  </div>
+
+  <main id="dashboard">
+    <h1>Admin Dashboard</h1>
+    <input id="new-password" type="password" placeholder="New password">
+    <button id="changePwBtn">Change Password</button>
+    <p id="pwMsg"></p>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
