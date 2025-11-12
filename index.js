@@ -1,4 +1,4 @@
-const pw = "access123";
+const pw = "the-av-times";
 const overlay = document.getElementById('lock-overlay');
 const pwInput = document.getElementById('password');
 const msg = document.getElementById('msg');
