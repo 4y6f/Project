@@ -86,7 +86,7 @@ button {
 button:hover {
   background: var(--button-hover-bg);
   transform: translateY(-2px);
-  box-shadow: 0 0 8px 2px rgba(255,0,0,0.6);
+  box-shadow: 0 0 8px 2px rgba(131, 146, 234, 0.933);
 }
 
 button:active {
@@ -96,7 +96,7 @@ button:active {
 
 #msg {
   margin-top: 12px;
-  color: rgb(200, 69, 69);
+  color: rgb(255, 58, 58);
   font-size: 0.9rem;
   min-height: 1.2em;
 }
