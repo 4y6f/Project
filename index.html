@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cirra</title>
-  <link rel="stylesheet" href="styling.css">
-  <script src="index.js" defer></script>
+  <title>Cirra - Your all-in-one wingman</title>
+  <link rel="stylesheet" href="/styling.css">
+  <script src="/index.js" defer></script>
 </head>
 <body class="locked">
-
-  <!-- Lock Screen -->
+  <!-- LOCK SCREEN -->
   <div id="lock-overlay">
     <div id="lock-box">
-      <h2>Enter your access code</h2>
-      <p><i>Check your email for the code.</i></p>
+      <h2>Enter Access Code</h2>
+      <p><i>Check your email.</i></p>
       <input id="password" type="password" placeholder="Access Code" autocomplete="off">
       <div class="btn-row">
         <button id="unlockBtn"><strong>Submit</strong></button>
@@ -23,46 +22,45 @@
     </div>
   </div>
 
-  <!-- Main Content -->
-  <div id="site-root">
+  <!-- SIDEBAR -->
+  <nav id="sidebar">
+    <h1>Cirra</h1>
+    <p>Your all-in-one wingman</p>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/maps">Maps</a></li>
+      <li><a href="/airports">Airports</a></li>
+      <li><a href="/flights">Flights</a></li>
+      <li><a href="/tips">Tips</a></li>
+    </ul>
+  </nav>
 
-    <header>
-      <h1>Cirra</h1>
-      <p class="motto">Your all-in-one wingman.</p>
-    </header>
+  <!-- MAIN CONTENT -->
+  <main id="site-root">
+    <section class="hero">
+      <h2>Welcome to Cirra</h2>
+      <p>Track flights, airports, and aviation info all in one place.</p>
+      <div class="hero-buttons">
+        <a href="/maps" class="btn">View Maps</a>
+        <a href="/airports" class="btn">Airports Info</a>
+        <a href="/flights" class="btn">Flight Status</a>
+      </div>
+    </section>
 
-    <!-- Sidebar -->
-    <aside id="sidebar">
-      <button data-section="dashboard">Dashboard</button>
-      <button data-section="maps">Maps</button>
-      <button data-section="airports">Airports</button>
-      <button data-section="flights">Flight Status</button>
-    </aside>
-
-    <!-- Sections -->
-    <main>
-      <section id="dashboard" class="section">
-        <h2>Dashboard</h2>
-        <p>Welcome to Cirra — track flights, airports, and delays in one place.</p>
-      </section>
-
-      <section id="maps" class="section" style="display:none">
-        <h2>Maps</h2>
-        <p>Interactive aviation maps go here.</p>
-      </section>
-
-      <section id="airports" class="section" style="display:none">
-        <h2>Airports</h2>
-        <p>Information about airports and terminals.</p>
-      </section>
-
-      <section id="flights" class="section" style="display:none">
-        <h2>Flight Status</h2>
-        <p>Track flight delays and arrivals.</p>
-      </section>
-    </main>
-
-  </div>
-
+    <section class="dashboard">
+      <div class="card">
+        <h3>Flight Delays</h3>
+        <p>Placeholder: Track current airport delays and flight statuses.</p>
+      </div>
+      <div class="card">
+        <h3>Popular Airports</h3>
+        <p>Placeholder: Top airports and info.</p>
+      </div>
+      <div class="card">
+        <h3>Quick Map</h3>
+        <p>Placeholder: Map overview of airports.</p>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
