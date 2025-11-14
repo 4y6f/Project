@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cirra - Your all-in-one wingman</title>
-<link rel="stylesheet" href="styling.css">
-<script src="index.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cirra</title>
+  <link rel="stylesheet" href="styling.css">
+  <script src="index.js" defer></script>
 </head>
 <body class="locked">
-  <!-- LOCK SCREEN -->
+
+  <!-- Lock Screen -->
   <div id="lock-overlay">
     <div id="lock-box">
       <h2>Enter your access code</h2>
@@ -22,57 +23,46 @@
     </div>
   </div>
 
-  <!-- MAIN SITE -->
+  <!-- Main Content -->
   <div id="site-root">
-    <!-- SIDEBAR -->
-    <nav id="sidebar">
-      <div id="sidebar-toggle">☰</div>
-      <ul>
-        <li><a href="/map">Maps</a></li>
-        <li><a href="/airport">Airports</a></li>
-        <li><a href="/delays">Delays</a></li>
-        <li><a href="/flights">Flights</a></li>
-        <li><a href="/weather">Weather</a></li>
-      </ul>
-    </nav>
 
-    <!-- HEADER / HERO -->
-    <header id="header">
+    <header>
       <h1>Cirra</h1>
       <p class="motto">Your all-in-one wingman.</p>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="hero">
-      <h2>Flight tracking & airport insights</h2>
-      <p>Monitor delays, explore maps, and get aviation updates all in one place.</p>
-      <button class="primary-btn">Get Started</button>
-    </section>
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <button data-section="dashboard">Dashboard</button>
+      <button data-section="maps">Maps</button>
+      <button data-section="airports">Airports</button>
+      <button data-section="flights">Flight Status</button>
+    </aside>
 
-    <!-- DASHBOARD CARDS -->
-    <section id="dashboard">
-      <div class="card">
-        <h3>Upcoming Flights</h3>
-        <p>Placeholder flight info for top airports.</p>
-      </div>
-      <div class="card">
-        <h3>Airport Delays</h3>
-        <p>Sample delays and alerts.</p>
-      </div>
-      <div class="card">
-        <h3>Weather Radar</h3>
-        <p>Current aviation weather conditions.</p>
-      </div>
-      <div class="card">
-        <h3>Maps & Navigation</h3>
-        <p>Interactive airport and airspace maps.</p>
-      </div>
-    </section>
+    <!-- Sections -->
+    <main>
+      <section id="dashboard" class="section">
+        <h2>Dashboard</h2>
+        <p>Welcome to Cirra — track flights, airports, and delays in one place.</p>
+      </section>
 
-    <!-- FOOTER -->
-    <footer>
-      <p>© 2025 Cirra | Your all-in-one wingman</p>
-    </footer>
+      <section id="maps" class="section" style="display:none">
+        <h2>Maps</h2>
+        <p>Interactive aviation maps go here.</p>
+      </section>
+
+      <section id="airports" class="section" style="display:none">
+        <h2>Airports</h2>
+        <p>Information about airports and terminals.</p>
+      </section>
+
+      <section id="flights" class="section" style="display:none">
+        <h2>Flight Status</h2>
+        <p>Track flight delays and arrivals.</p>
+      </section>
+    </main>
+
   </div>
+
 </body>
 </html>
