@@ -7,6 +7,9 @@ const siteRoot = document.getElementById('site-root');
 
 pwInput.focus();
 
+// Use sessionStorage to persist login per tab
+if(sessionStorage.getItem('cirra-unlocked')) unlockUI();
+
 unlockBtn.addEventListener('click', checkPw);
 pwInput.addEventListener('keydown', e => { if(e.key==='Enter') checkPw(); });
 cancelBtn.addEventListener('click', () => { window.location.href='https://google.com'; });
@@ -16,9 +19,12 @@ let tries=0; const maxTries=3;
 async function checkPw() {
   const input = pwInput.value.trim();
   try {
-    const res = await fetch('/auth',{method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({password:input})});
+    const res = await fetch('/auth', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({password:input}) });
     const data = await res.json();
-    if(data.ok) unlock(); else fail();
+    if(data.ok) {
+      sessionStorage.setItem('cirra-unlocked','true');
+      unlockUI();
+    } else fail();
   } catch(err){ fail(); }
 }
 
@@ -29,7 +35,7 @@ function fail() {
   if(tries>=maxTries) setTimeout(()=>window.location.href='https://google.com',1000);
 }
 
-function unlock(){
+function unlockUI() {
   overlay.style.opacity=0;
   setTimeout(()=>overlay.style.display='none',500);
   siteRoot.style.display='block';
