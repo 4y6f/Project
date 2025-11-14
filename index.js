@@ -7,7 +7,6 @@ const siteRoot = document.getElementById('site-root');
 
 pwInput.focus();
 
-// Use sessionStorage to persist login per tab
 if(sessionStorage.getItem('cirra-unlocked')) unlockUI();
 
 unlockBtn.addEventListener('click', checkPw);
