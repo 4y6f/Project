@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Aviation Times</title>
-  <link rel="stylesheet" href="styling.css">
-  <script src="index.js" defer></script>
+  <title>Cirra - Your all-in-one wingman.</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="auth.js" defer></script>
 </head>
 <body class="locked">
+
   <div id="lock-overlay">
     <div id="lock-box">
-      <h2>Enter your access code here.</h2>
+      <h2>Enter your access code</h2>
       <p><i>Check your email.</i></p>
-      <input id="password" type="password" placeholder="Access Code..." autocomplete="off">
+      <input id="password" type="password" placeholder="Access Code" autocomplete="off">
       <div class="btn-row">
         <button id="unlockBtn"><strong>Submit</strong></button>
         <button id="cancelBtn"><strong>Cancel</strong></button>
@@ -20,10 +21,38 @@
       <div id="msg"></div>
     </div>
   </div>
-
+<!-- Cirra -->
   <div id="site-root">
-    <h1>The Aviation Times</h1>
-    <p>The <strong>best newspaper</strong> for <strong>passionate aviators.</strong></p>
+    <header>
+      <h1>Cirra</h1>
+      <p class="motto">Your all-in-one wingman.</p>
+    </header>
+
+    <main>
+      <section class="flights-section">
+        <h2>Flight Status Dashboard</h2>
+        <div class="flights-grid">
+          <div class="flight-card">
+            <h3>Flight: AA123</h3>
+            <p>Departure: JFK 08:30</p>
+            <p>Arrival: LAX 11:45</p>
+            <p>Status: <span class="on-time">On Time</span></p>
+          </div>
+          <div class="flight-card">
+            <h3>Flight: DL456</h3>
+            <p>Departure: SFO 09:00</p>
+            <p>Arrival: ORD 15:20</p>
+            <p>Status: <span class="delayed">Delayed</span></p>
+          </div>
+          <div class="flight-card">
+            <h3>Flight: UA789</h3>
+            <p>Departure: ATL 07:45</p>
+            <p>Arrival: MIA 09:30</p>
+            <p>Status: <span class="on-time">On Time</span></p>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
 
   <div id="theme-toggle">
@@ -38,7 +67,6 @@
       <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
       <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
     </svg>
-  
     <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M21 12.79A9 9 0 0111.21 3 7 7 0 1012 21a9 9 0 009-8.21z"/>
     </svg>
