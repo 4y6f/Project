@@ -1,26 +1,88 @@
 :root {
-  --bg-color: #000;
-  --text-color: #fff;
+  --primary: #64b5f6; /* light blue branding */
+  --bg-color: #eaf4ff;
+  --text-color: #111;
+  --card-bg: #fff;
+  --card-shadow: rgba(100, 181, 246, 0.3);
   --lock-bg: rgba(0,0,0,0.95);
-  --button-bg: linear-gradient(135deg, #2a2a2a, #3a3a3a);
-  --button-hover-bg: linear-gradient(135deg, #555, #666);
+  --button-bg: linear-gradient(135deg, #64b5f6, #42a5f5);
+  --button-hover-bg: linear-gradient(135deg, #42a5f5, #2196f3);
 }
 
-body.light {
-  --bg-color: #f5f5f5;
-  --text-color: #111;
-  --lock-bg: rgba(255,255,255,0.95);
-  --button-bg: linear-gradient(135deg, #ddd, #ccc);
-  --button-hover-bg: linear-gradient(135deg, #bbb, #aaa);
+body.dark {
+  --bg-color: #0d1117;
+  --text-color: #eaf4ff;
+  --card-bg: #111827;
+  --card-shadow: rgba(100, 181, 246, 0.3);
+  --lock-bg: rgba(0,0,0,0.95);
+  --button-bg: linear-gradient(135deg, #42a5f5, #64b5f6);
+  --button-hover-bg: linear-gradient(135deg, #64b5f6, #90caf9);
 }
 
 body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
   background: var(--bg-color);
   color: var(--text-color);
-  font-family: system-ui, sans-serif;
-  transition: background 0.6s ease, color 0.6s ease;
+  transition: all 0.4s ease;
 }
 
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: var(--primary);
+}
+
+.motto {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.flights-section {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.flights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.flight-card {
+  background: var(--card-bg);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px var(--card-shadow);
+  transition: transform 0.3s ease;
+}
+
+.flight-card:hover {
+  transform: translateY(-4px);
+}
+
+.flight-card h3 {
+  margin: 0;
+  color: var(--primary);
+}
+
+.on-time {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+.delayed {
+  color: #f44336;
+  font-weight: 600;
+}
+
+/* Lock Screen */
 body.locked > #site-root {
   display: none;
 }
@@ -32,7 +94,6 @@ body.locked > #site-root {
   align-items: center;
   justify-content: center;
   background: var(--lock-bg);
-  color: var(--text-color);
   z-index: 9999;
   padding: 2px;
   box-sizing: border-box;
@@ -46,7 +107,6 @@ body.locked > #site-root {
   border-radius: 10px;
   box-shadow: 0 0 25px rgba(0,0,0,0.6);
   text-align: center;
-  transition: all 0.4s ease;
 }
 
 #password {
@@ -57,13 +117,6 @@ body.locked > #site-root {
   border: none;
   background: #222;
   color: #fff;
-  box-sizing: border-box;
-  transition: outline 0.3s ease, box-shadow 0.3s ease;
-}
-
-#password:focus {
-  outline: 2px solid #555;
-  box-shadow: 0 0 8px rgb(132, 149, 248);
 }
 
 .btn-row {
@@ -86,50 +139,13 @@ button {
 button:hover {
   background: var(--button-hover-bg);
   transform: translateY(-2px);
-  box-shadow: 0 0 8px 2px rgba(131, 146, 234, 0.933);
 }
 
 button:active {
   transform: scale(0.98);
-  box-shadow: none;
 }
 
-#msg {
-  margin-top: 12px;
-  color: rgb(255, 58, 58);
-  font-size: 0.9rem;
-  min-height: 1.2em;
-}
-
-#site-root {
-  padding: 1rem 1.5rem;
-  color: var(--text-color);
-  background: var(--bg-color);
-  min-height: 100vh;
-  font-family: system-ui, sans-serif;
-  transition: all 0.6s ease;
-}
-
-#footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  padding: 0.5rem 0;
-  background: #111;
-  color: #fff;
-  font-family: system-ui, sans-serif;
-  font-size: 0.9rem;
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.5);
-  transition: background 0.6s ease, color 0.6s ease;
-}
-
-body.light #footer {
-  background: #ddd;
-  color: #111;
-}
-
+/* Theme toggle */
 #theme-toggle {
   position: fixed;
   top: 1rem;
@@ -140,37 +156,32 @@ body.light #footer {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  color: #fff;
-}
-
-body.light #theme-toggle {
-  color: #111;
+  color: var(--primary);
 }
 
 #theme-toggle svg {
   width: 24px;
   height: 24px;
   position: absolute;
-  transition: all 0.6s ease, transform 0.6s ease;
+  transition: all 0.4s ease;
 }
 
-body.light #sun-icon {
+body.dark #sun-icon {
   transform: scale(0);
   opacity: 0;
 }
 
-body.light #moon-icon {
+body.dark #moon-icon {
   transform: scale(1);
   opacity: 1;
 }
 
-body:not(.light) #sun-icon {
+body:not(.dark) #sun-icon {
   transform: scale(1);
   opacity: 1;
 }
 
-body:not(.light) #moon-icon {
+body:not(.dark) #moon-icon {
   transform: scale(0);
   opacity: 0;
 }
