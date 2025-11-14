@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cirra</title>
-  <link rel="stylesheet" href="/styling.css">
-  <script src="/index.js" defer></script>
+  <title>Cirra - Your all-in-one wingman</title>
+  <link rel="stylesheet" href="styling.css">
+  <script src="index.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="locked">
 
-  <!-- LOCK SCREEN -->
   <div id="lock-overlay">
     <div id="lock-box">
-      <h2>Enter Access Code</h2>
+      <h2>Access Code</h2>
+      <p>Enter your access code to continue</p>
       <input id="password" type="password" placeholder="Access Code" autocomplete="off">
       <div class="btn-row">
         <button id="unlockBtn">Submit</button>
@@ -22,51 +23,142 @@
     </div>
   </div>
 
-  <!-- SIDEBAR -->
-  <nav id="sidebar">
-    <ul>
-      <li><span>🏠</span></li>
-      <li><span>🗺️</span></li>
-      <li><span>🛫</span></li>
-      <li><span>✈️</span></li>
-      <li><span>💡</span></li>
-    </ul>
-  </nav>
+  <div id="site-root">
+    <aside id="sidebar">
+      <div class="logo">Cirra</div>
+      <nav>
+        <ul>
+          <li data-page="dashboard">Dashboard</li>
+          <li data-page="maps">Maps</li>
+          <li data-page="airports">Airports</li>
+          <li data-page="flights">Flights</li>
+          <li data-page="tips">Tips</li>
+          <li data-page="stats">Stats</li>
+        </ul>
+      </nav>
+    </aside>
 
-  <!-- MAIN CONTENT -->
-  <main id="site-root">
-    <section class="hero">
-      <h1>Cirra</h1>
-      <p>Your all-in-one wingman for aviation info.</p>
-    </section>
+    <main id="main-content">
+      <section class="hero">
+        <h1>Cirra</h1>
+        <p class="motto">Your all-in-one wingman.</p>
+      </section>
 
-    <section class="dashboard">
-      <div class="card">
-        <h3>📊 Flight Delays</h3>
-        <ul>
-          <li>Flight AB123 - Delayed 20min</li>
-          <li>Flight XY987 - On Time</li>
-          <li>Flight CD456 - Delayed 45min</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>🛬 Popular Airports</h3>
-        <ul>
-          <li>JFK - New York</li>
-          <li>LAX - Los Angeles</li>
-          <li>ORD - Chicago</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>💡 Tips</h3>
-        <ul>
-          <li>Arrive 2 hours early for international flights</li>
-          <li>Check terminal info before arriving</li>
-          <li>Use Cirra to track flights easily</li>
-        </ul>
-      </div>
-    </section>
-  </main>
+      <section class="dashboard cards" id="dashboard">
+        <div class="card stats-card">
+          <h3>Active Flights</h3>
+          <p class="large">142</p>
+        </div>
+        <div class="card stats-card">
+          <h3>Delayed Flights</h3>
+          <p class="large">37</p>
+        </div>
+        <div class="card stats-card">
+          <h3>Airports Online</h3>
+          <p class="large">56</p>
+        </div>
+        <div class="card stats-card">
+          <h3>Avg Delay (min)</h3>
+          <p class="large">22</p>
+        </div>
+
+        <div class="card chart-card">
+          <h3>Flight Status Overview</h3>
+          <canvas id="statusChart" height="150"></canvas>
+        </div>
+
+        <div class="card chart-card">
+          <h3>Delay Trends</h3>
+          <canvas id="delayChart" height="150"></canvas>
+        </div>
+
+        <div class="card table-card">
+          <h3>Upcoming Departures</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Flight</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>AA123</td><td>JFK</td><td>LAX</td><td>On Time</td></tr>
+              <tr><td>DL456</td><td>ATL</td><td>ORD</td><td>Delayed</td></tr>
+              <tr><td>UA789</td><td>LAX</td><td>SEA</td><td>Boarding</td></tr>
+              <tr><td>BA321</td><td>LHR</td><td>JFK</td><td>On Time</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card chart-card">
+          <h3>Airport Traffic</h3>
+          <canvas id="trafficChart" height="150"></canvas>
+        </div>
+
+      </section>
+
+      <section class="cards hidden" id="maps">
+        <div class="card full-width">
+          <h3>Flight Maps</h3>
+          <div class="placeholder-map">[Interactive Map Placeholder]</div>
+        </div>
+      </section>
+
+      <section class="cards hidden" id="airports">
+        <div class="card full-width">
+          <h3>Airport Info</h3>
+          <table>
+            <thead>
+              <tr><th>Airport</th><th>City</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>JFK</td><td>New York</td><td>Online</td></tr>
+              <tr><td>LAX</td><td>Los Angeles</td><td>Online</td></tr>
+              <tr><td>ATL</td><td>Atlanta</td><td>Maintenance</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="cards hidden" id="flights">
+        <div class="card full-width">
+          <h3>Flight Status</h3>
+          <table>
+            <thead>
+              <tr><th>Flight</th><th>Departure</th><th>Arrival</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>AA123</td><td>08:30</td><td>11:45</td><td>On Time</td></tr>
+              <tr><td>DL456</td><td>09:15</td><td>12:05</td><td>Delayed</td></tr>
+              <tr><td>UA789</td><td>10:00</td><td>12:50</td><td>Boarding</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="cards hidden" id="tips">
+        <div class="card full-width">
+          <h3>Travel Tips</h3>
+          <ul>
+            <li>Arrive early at the airport</li>
+            <li>Check-in online to save time</li>
+            <li>Track your flights regularly</li>
+            <li>Pack essentials in carry-on</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cards hidden" id="stats">
+        <div class="card chart-card full-width">
+          <h3>Weekly Flight Traffic</h3>
+          <canvas id="weeklyChart" height="200"></canvas>
+        </div>
+      </section>
+
+    </main>
+  </div>
 
 </body>
 </html>
