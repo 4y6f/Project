@@ -84,7 +84,7 @@ header nav a:hover {
 
 .neon {
   color: #7dd3fc;
-  text-shadow: 0 0 5px #7dd3fc, 0 0 5px #7dd3fc;
+  text-shadow: 0 0 3px #7dd3fc, 0 0 2px #7dd3fc;
 }
 
 .hero p {
