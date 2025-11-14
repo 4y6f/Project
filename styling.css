@@ -6,52 +6,6 @@ body {
   overflow-x: hidden;
 }
 
-.locked #site-root {
-  display: none;
-}
-
-#lock-overlay {
-  position: fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-.lock-container {
-  background: #1a1a1a;
-  padding: 3rem;
-  border-radius: 1rem;
-  text-align: center;
-  box-shadow: 0 0 20px #0ff;
-}
-
-.lock-container input {
-  padding: 0.8rem;
-  margin-top: 1rem;
-  border-radius: 0.5rem;
-  border: none;
-  outline: none;
-  width: 70%;
-  background: #111;
-  color: #f1f1f1;
-}
-
-.lock-container button {
-  margin-top: 1rem;
-  padding: 0.8rem 2rem;
-  border-radius: 0.5rem;
-  border: none;
-  background: #00ffff;
-  color: #0d0d0d;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 0 10px #00ffff66;
-}
-
 header {
   display: flex;
   justify-content: space-between;
@@ -63,8 +17,8 @@ header {
 header .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #0ff;
-  text-shadow: 0 0 6px #00ffff77;
+  color: #66ccff;
+  text-shadow: 0 0 6px #66ccff77;
 }
 
 header nav a {
@@ -75,8 +29,8 @@ header nav a {
 }
 
 header nav a:hover {
-  color: #0ff;
-  text-shadow: 0 0 4px #00ffff77;
+  color: #66ccff;
+  text-shadow: 0 0 4px #66ccff77;
 }
 
 .hero {
@@ -92,8 +46,8 @@ header nav a:hover {
 }
 
 .hero .neon {
-  color: #0ff;
-  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff33, 0 0 20px #0ff66;
+  color: #66ccff;
+  text-shadow: 0 0 5px #66ccff, 0 0 10px #66ccff44, 0 0 20px #66ccff22;
 }
 
 .hero p {
@@ -110,33 +64,33 @@ button.primary {
   padding: 0.8rem 2rem;
   border: none;
   border-radius: 0.6rem;
-  background: #0ff;
+  background: #66ccff;
   color: #0d0d0d;
   font-weight: bold;
   margin-right: 1rem;
   cursor: pointer;
-  box-shadow: 0 0 15px #0ff44;
+  box-shadow: 0 0 15px #66ccff44;
   transition: 0.3s;
 }
 
 button.primary:hover {
-  box-shadow: 0 0 25px #0ff77;
+  box-shadow: 0 0 25px #66ccff66;
 }
 
 button.secondary {
   padding: 0.8rem 2rem;
-  border: 2px solid #0ff;
+  border: 2px solid #66ccff;
   border-radius: 0.6rem;
   background: transparent;
-  color: #0ff;
+  color: #66ccff;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
 }
 
 button.secondary:hover {
-  background: #0ff11;
-  box-shadow: 0 0 15px #0ff44;
+  background: #66ccff11;
+  box-shadow: 0 0 15px #66ccff44;
 }
 
 .floating-plane {
@@ -155,6 +109,7 @@ button.secondary:hover {
 
 .features {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding: 4rem 2rem;
   gap: 1rem;
@@ -164,15 +119,15 @@ button.secondary:hover {
   background: #111;
   padding: 2rem;
   border-radius: 1rem;
-  flex: 1;
-  box-shadow: 0 0 15px #0ff11;
+  flex: 1 1 250px;
+  box-shadow: 0 0 10px #66ccff22, 0 0 20px #66ccff11;
   text-align: center;
+  transition: transform 0.3s;
 }
 
-.feature-card .icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #0ff;
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #66ccff44, 0 0 40px #66ccff22;
 }
 
 .airport-preview {
@@ -181,6 +136,7 @@ button.secondary:hover {
 
 .airport-cards {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   gap: 1rem;
 }
@@ -190,12 +146,19 @@ button.secondary:hover {
   padding: 2rem;
   border-radius: 1rem;
   width: 250px;
-  box-shadow: 0 0 10px #0ff22;
+  box-shadow: 0 0 10px #66ccff22, 0 0 20px #66ccff11;
   text-align: center;
+  transition: transform 0.3s;
+}
+
+.airport-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #66ccff44, 0 0 40px #66ccff22;
 }
 
 .flight-tracking {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 4rem 2rem;
   gap: 2rem;
@@ -214,7 +177,7 @@ button.secondary:hover {
   height: 250px;
   border-radius: 1rem;
   position: relative;
-  box-shadow: 0 0 10px #0ff22;
+  box-shadow: 0 0 10px #66ccff22;
 }
 
 .plane-path {
@@ -233,10 +196,16 @@ button.secondary:hover {
 }
 
 .cta {
-  background: #0ff11;
-  color: #0d0d0d;
+  background: #112233;
+  color: #f1f1f1;
   text-align: center;
   padding: 2rem;
+}
+
+.cta button.primary {
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding: 1rem 3rem;
 }
 
 footer {
@@ -250,5 +219,5 @@ footer {
 footer .footer-logo {
   margin-top: 0.5rem;
   font-size: 1.5rem;
-  color: #0ff;
+  color: #fff;
 }
