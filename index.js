@@ -31,7 +31,7 @@ async function checkPw() {
   if (!input) return;
 
   try {
-    const res = await fetch('/check-password', {
+    const res = await fetch('/auth', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password: input })
