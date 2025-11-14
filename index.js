@@ -1,4 +1,3 @@
-const pw = "the-av-times";
 const overlay = document.getElementById('lock-overlay');
 const pwInput = document.getElementById('password');
 const msg = document.getElementById('msg');
@@ -27,21 +26,37 @@ cancelBtn.addEventListener('click', () => {
   window.location.href = 'https://google.com';
 });
 
-function checkPw() {
+async function checkPw() {
   const input = pwInput.value.trim();
-  if (input === pw) {
-    unlock();
-  } else {
-    tries++;
-    msg.textContent = `Access Code invalid. (${maxTries - tries} attempts remaining.)`;
-    pwInput.value = '';
-    if (tries >= maxTries) {
-      msg.textContent = `You've reached the attempt limit. Redirecting.`;
-      setTimeout(() => {
-        document.documentElement.innerHTML = '';
-        window.location.href = 'https://google.com';
-      }, 1000);
+  if (!input) return;
+
+  try {
+    const res = await fetch('/check-password', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: input })
+    });
+
+    const data = await res.json();
+
+    if (data.ok) {
+      unlock();
+    } else {
+      tries++;
+      msg.textContent = `Access Code invalid. (${maxTries - tries} attempts remaining.)`;
+      pwInput.value = '';
+      if (tries >= maxTries) {
+        msg.textContent = `You've reached the attempt limit. Redirecting.`;
+        setTimeout(() => {
+          document.documentElement.innerHTML = '';
+          window.location.href = 'https://google.com';
+        }, 1000);
+      }
     }
+
+  } catch (err) {
+    console.error(err);
+    msg.textContent = "Error checking password. Try again.";
   }
 }
 
