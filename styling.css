@@ -1,17 +1,17 @@
 :root {
-  --bg-color: #0a1a2b;
-  --text-color: #c0d6e4;
-  --accent-color: #4fc3f7;
-  --card-bg: #112540;
-  --card-shadow: rgba(0, 0, 0, 0.5);
-  --button-bg: linear-gradient(135deg, #1b2f4a, #1f3a57);
-  --button-hover-bg: linear-gradient(135deg, #326c9b, #1f3a57);
+  --bg-color: #0f1b2e;
+  --text-color: #c8d8e4;
+  --accent-color: #5ec9f8;
+  --card-bg: #132a44;
+  --card-shadow: rgba(0, 0, 0, 0.6);
+  --button-bg: linear-gradient(135deg, #1f3a57, #1b3350);
+  --button-hover-bg: linear-gradient(135deg, #5ec9f8, #3aaede);
 }
 
 body {
   background: var(--bg-color);
   color: var(--text-color);
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   margin: 0;
   transition: background 0.4s ease, color 0.4s ease;
 }
@@ -20,14 +20,14 @@ body.locked > #site-root {
   display: none;
 }
 
-/* LOCK OVERLAY */
+/* Lock overlay */
 #lock-overlay {
   position: fixed;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(10, 26, 43, 0.95);
+  background: rgba(15, 27, 46, 0.95);
   z-index: 9999;
   padding: 2px;
   box-sizing: border-box;
@@ -37,21 +37,20 @@ body.locked > #site-root {
   width: 100%;
   max-width: 360px;
   padding: 24px;
-  background: #112540;
+  background: #132a44;
   border-radius: 10px;
   box-shadow: 0 0 25px rgba(0,0,0,0.6);
   text-align: center;
-  transition: all 0.4s ease;
 }
 
 #password {
   width: 100%;
   padding: 12px;
   margin-top: 16px;
-  border-radius: 6px;
   border: none;
-  background: #1b2f4a;
-  color: #c0d6e4;
+  border-radius: 6px;
+  background: #1b3350;
+  color: #c8d8e4;
   box-sizing: border-box;
 }
 
@@ -80,7 +79,7 @@ button {
 button:hover {
   background: var(--button-hover-bg);
   transform: translateY(-2px);
-  box-shadow: 0 0 8px 2px var(--accent-color);
+  box-shadow: 0 0 8px var(--accent-color);
 }
 
 button:active {
@@ -95,34 +94,33 @@ button:active {
   min-height: 1.2em;
 }
 
-/* SITE ROOT */
+/* Site root content */
 #site-root {
   padding: 1rem 2rem;
   display: block;
 }
 
-header {
+.site-header {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-header h1 {
+.site-header h1 {
   font-size: 3rem;
   color: var(--accent-color);
   margin: 0;
 }
 
-header .motto {
+.site-header .motto {
   font-size: 1.2rem;
-  color: #a0c4e4;
+  color: #a0cbe4;
   margin-top: 0.3rem;
 }
 
-/* DASHBOARD */
 .dashboard {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 1.8rem;
 }
 
 .card {
@@ -143,7 +141,7 @@ header .motto {
   color: var(--accent-color);
 }
 
-footer {
+.site-footer {
   text-align: center;
   padding: 1rem 0;
   margin-top: 3rem;
