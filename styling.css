@@ -1,65 +1,52 @@
 :root {
-  --bg: #111;
+  --bg: #0c0c0c;
   --text: #eee;
   --accent: #1e90ff;
-  --card-bg: #222;
+  --card-bg: #1a1a1a;
+  --glow: rgba(30,144,255,0.3);
 }
 
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  margin:0; font-family:'Segoe UI',sans-serif; background:var(--bg); color:var(--text); overflow-x:hidden;
 }
 
-a { text-decoration: none; color: var(--accent); }
+a { text-decoration:none; color:var(--accent); transition:0.2s; }
+a:hover { color:#fff; }
 
 #sidebar {
-  position: fixed;
-  left: 0; top: 0; width: 70px; height: 100%;
-  background: #111; padding: 1rem;
-  display: flex; flex-direction: column; align-items: center;
+  position:fixed; top:0; left:0; width:70px; height:100%; background:#111; padding:1rem; display:flex; flex-direction:column; align-items:center; transition:0.3s;
 }
+#sidebar h1 { display:none; }
+#sidebar ul { list-style:none; padding:0; margin-top:2rem; width:100%; }
+#sidebar ul li { margin:1rem 0; text-align:center; }
+#sidebar ul li a { display:flex; flex-direction:column; align-items:center; color:var(--text); transition:0.2s; }
+#sidebar ul li a span { font-size:1.5rem; }
+#sidebar ul li a:hover { color:var(--accent); }
 
-#sidebar h1 { display: none; }
+main { margin-left:70px; padding:2rem; }
 
-#sidebar ul { list-style: none; padding: 0; margin-top: 2rem; width: 100%; }
-
-#sidebar ul li { margin: 1rem 0; text-align: center; }
-
-#sidebar ul li a { display: flex; flex-direction: column; align-items: center; color: var(--text); }
-
-#sidebar ul li a span { font-size: 1.5rem; }
-
-#sidebar ul li a:hover { color: var(--accent); }
-
-main { margin-left: 70px; padding: 2rem; }
-
-.hero { text-align: center; margin-bottom: 2rem; }
-
-.hero h2 { color: var(--accent); }
-
+.hero { text-align:center; margin-bottom:2rem; }
+.hero h2 { color:var(--accent); text-shadow:0 0 5px var(--glow); }
 .hero-buttons .btn {
-  display: inline-block; margin: 0.5rem; padding: 0.5rem 1rem;
-  border-radius: 5px; background: var(--accent); color: #fff;
-  transition: transform 0.2s;
+  display:inline-block; margin:0.5rem; padding:0.5rem 1rem; border-radius:5px; background:var(--accent); color:#fff; transition:0.3s; box-shadow:0 0 10px var(--glow);
 }
+.hero-buttons .btn:hover { transform:translateY(-2px); box-shadow:0 0 20px var(--glow); }
 
-.hero-buttons .btn:hover { transform: translateY(-2px); }
+.dashboard { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
+.card {
+  flex:1; min-width:200px; background:var(--card-bg); padding:1rem; border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.5); transition:0.3s; text-align:left;
+}
+.card:hover { box-shadow:0 0 20px var(--glow); }
 
-.dashboard { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-.card { flex: 1; min-width: 150px; background: var(--card-bg); padding: 1rem; border-radius: 8px; text-align: center; }
+.placeholder-map { height:100px; background:#222; display:flex; justify-content:center; align-items:center; border-radius:5px; color:#555; }
 
 #lock-overlay {
-  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center;
+  position:fixed; top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.95); display:flex; justify-content:center; align-items:center; transition:0.5s; z-index:1000;
 }
-
 #lock-box {
-  background: #222; padding: 2rem; border-radius: 10px; text-align: center;
+  background:#222; padding:2rem; border-radius:10px; text-align:center; box-shadow:0 0 20px var(--glow);
 }
-
-#lock-box input { padding: 0.5rem; margin-top: 1rem; width: 100%; border-radius: 5px; border: none; }
-
-#lock-box button { margin: 0.5rem; padding: 0.5rem 1rem; border: none; border-radius: 5px; background: var(--accent); color: #fff; cursor: pointer; }
+#lock-box input { padding:0.5rem; margin-top:1rem; width:100%; border-radius:5px; border:none; background:#111; color:#eee; }
+#lock-box button { margin:0.5rem; padding:0.5rem 1rem; border:none; border-radius:5px; background:var(--accent); color:#fff; cursor:pointer; }
