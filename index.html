@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cirra - Your all-in-one wingman</title>
+  <title>Cirra</title>
   <link rel="stylesheet" href="/styling.css">
   <script src="/index.js" defer></script>
 </head>
 <body class="locked">
+
   <!-- LOCK SCREEN -->
   <div id="lock-overlay">
     <div id="lock-box">
       <h2>Enter Access Code</h2>
-      <p><i>Check your email.</i></p>
       <input id="password" type="password" placeholder="Access Code" autocomplete="off">
       <div class="btn-row">
-        <button id="unlockBtn"><strong>Submit</strong></button>
-        <button id="cancelBtn"><strong>Cancel</strong></button>
+        <button id="unlockBtn">Submit</button>
+        <button id="cancelBtn">Cancel</button>
       </div>
       <div id="msg"></div>
     </div>
@@ -25,13 +25,12 @@
   <!-- SIDEBAR -->
   <nav id="sidebar">
     <h1>Cirra</h1>
-    <p>Your all-in-one wingman</p>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/maps">Maps</a></li>
-      <li><a href="/airports">Airports</a></li>
-      <li><a href="/flights">Flights</a></li>
-      <li><a href="/tips">Tips</a></li>
+      <li><a href="/"><span>🏠</span> Home</a></li>
+      <li><a href="/maps"><span>🗺️</span> Maps</a></li>
+      <li><a href="/airports"><span>🛫</span> Airports</a></li>
+      <li><a href="/flights"><span>✈️</span> Flights</a></li>
+      <li><a href="/tips"><span>💡</span> Tips</a></li>
     </ul>
   </nav>
 
@@ -41,26 +40,18 @@
       <h2>Welcome to Cirra</h2>
       <p>Track flights, airports, and aviation info all in one place.</p>
       <div class="hero-buttons">
-        <a href="/maps" class="btn">View Maps</a>
-        <a href="/airports" class="btn">Airports Info</a>
+        <a href="/maps" class="btn">Maps</a>
+        <a href="/airports" class="btn">Airports</a>
         <a href="/flights" class="btn">Flight Status</a>
       </div>
     </section>
 
     <section class="dashboard">
-      <div class="card">
-        <h3>Flight Delays</h3>
-        <p>Placeholder: Track current airport delays and flight statuses.</p>
-      </div>
-      <div class="card">
-        <h3>Popular Airports</h3>
-        <p>Placeholder: Top airports and info.</p>
-      </div>
-      <div class="card">
-        <h3>Quick Map</h3>
-        <p>Placeholder: Map overview of airports.</p>
-      </div>
+      <div class="card">📊 Flight Delays<br>Placeholder data</div>
+      <div class="card">🛬 Popular Airports<br>Placeholder data</div>
+      <div class="card">🗺️ Quick Map<br>Placeholder data</div>
     </section>
   </main>
+
 </body>
 </html>
