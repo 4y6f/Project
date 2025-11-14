@@ -65,3 +65,19 @@ function unlock() {
     setTimeout(() => { siteRoot.style.opacity = '1'; }, 50);
   }, 600);
 }
+
+// Simple floating plane animation
+const plane = document.createElement('div');
+plane.className = 'plane';
+plane.innerHTML = '✈️';
+document.body.appendChild(plane);
+
+let posX = -50;
+function animatePlane() {
+  posX += 2;
+  if(posX > window.innerWidth + 50) posX = -50;
+  plane.style.transform = `translate(${posX}px, ${Math.sin(posX/50)*20}px)`;
+  requestAnimationFrame(animatePlane);
+}
+animatePlane();
+
