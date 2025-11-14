@@ -4,7 +4,7 @@ const msg = document.getElementById('msg');
 const unlockBtn = document.getElementById('unlockBtn');
 const cancelBtn = document.getElementById('cancelBtn');
 const siteRoot = document.getElementById('site-root');
-
+window.Alert(`Please be aware that none of the buttons on this site will function. (demo page)`)
 pwInput.focus();
 
 let tries = 0;
