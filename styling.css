@@ -7,30 +7,20 @@
 }
 
 body {
-  margin:0; font-family:'Segoe UI',sans-serif; background:var(--bg); color:var(--text); overflow-x:hidden;
+  margin:0; font-family:'Segoe UI',sans-serif; background:var(--bg); color:var(--text);
 }
-
-a { text-decoration:none; color:var(--accent); transition:0.2s; }
-a:hover { color:#fff; }
 
 #sidebar {
-  position:fixed; top:0; left:0; width:70px; height:100%; background:#111; padding:1rem; display:flex; flex-direction:column; align-items:center; transition:0.3s;
+  position:fixed; top:0; left:0; width:70px; height:100%; background:#111; padding:1rem; display:flex; flex-direction:column; align-items:center;
 }
-#sidebar h1 { display:none; }
-#sidebar ul { list-style:none; padding:0; margin-top:2rem; width:100%; }
-#sidebar ul li { margin:1rem 0; text-align:center; }
-#sidebar ul li a { display:flex; flex-direction:column; align-items:center; color:var(--text); transition:0.2s; }
-#sidebar ul li a span { font-size:1.5rem; }
-#sidebar ul li a:hover { color:var(--accent); }
+#sidebar ul { list-style:none; padding:0; margin-top:2rem; }
+#sidebar ul li { margin:1rem 0; font-size:1.5rem; cursor:pointer; text-align:center; transition:0.2s; }
+#sidebar ul li:hover { color:var(--accent); }
 
 main { margin-left:70px; padding:2rem; }
 
 .hero { text-align:center; margin-bottom:2rem; }
-.hero h2 { color:var(--accent); text-shadow:0 0 5px var(--glow); }
-.hero-buttons .btn {
-  display:inline-block; margin:0.5rem; padding:0.5rem 1rem; border-radius:5px; background:var(--accent); color:#fff; transition:0.3s; box-shadow:0 0 10px var(--glow);
-}
-.hero-buttons .btn:hover { transform:translateY(-2px); box-shadow:0 0 20px var(--glow); }
+.hero h1 { color:var(--accent); text-shadow:0 0 5px var(--glow); }
 
 .dashboard { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
 .card {
@@ -38,8 +28,6 @@ main { margin-left:70px; padding:2rem; }
   box-shadow:0 0 10px rgba(0,0,0,0.5); transition:0.3s; text-align:left;
 }
 .card:hover { box-shadow:0 0 20px var(--glow); }
-
-.placeholder-map { height:100px; background:#222; display:flex; justify-content:center; align-items:center; border-radius:5px; color:#555; }
 
 #lock-overlay {
   position:fixed; top:0; left:0; width:100%; height:100%;
