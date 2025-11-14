@@ -3,57 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cirra</title>
+  <title>Cirra - Your all-in-one wingman</title>
   <link rel="stylesheet" href="styling.css">
   <script src="index.js" defer></script>
 </head>
-<body class="locked dark">
+<body class="dark">
 
-  <div id="lock-overlay">
-    <div id="lock-box">
-      <h2>Access code required</h2>
-      <p><i>Check your email for a code.</i></p>
-      <input id="password" type="password" placeholder="Access Code" autocomplete="off">
-      <div class="btn-row">
-        <button id="unlockBtn"><strong>Submit</strong></button>
-        <button id="cancelBtn"><strong>Cancel</strong></button>
-      </div>
-      <div id="msg"></div>
-    </div>
-  </div>
-
-  <div id="site-root">
-    <header class="site-header">
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
       <h1>Cirra</h1>
-      <p class="motto">Your all-in-one wingman.</p>
-    </header>
+      <span>Your all-in-one wingman</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#flights">Flights</a></li>
+        <li><a href="#weather">Weather</a></li>
+        <li><a href="#airports">Airports</a></li>
+        <li><a href="#tips">Tips</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section class="dashboard">
-      <div class="card">
-        <h3>Flight Delays</h3>
-        <p><strong>Today:</strong> 8 flights delayed</p>
-        <p>Longest delay: 2h 45m on route LAX → JFK</p>
-      </div>
-      <div class="card">
-        <h3>Weather Alerts</h3>
-        <p>Strong crosswinds at SFO & ORD.</p>
-      </div>
-      <div class="card">
-        <h3>Airport Status</h3>
-        <p>All runways: operational</p>
-        <p>Security wait: 12-18 min (moderate)</p>
-      </div>
-      <div class="card">
-        <h3>Tips & Notices</h3>
-        <p>Check in online to skip queues.</p>
-        <p>Consider early arrival during peak hours.</p>
+  <!-- SIDEBAR (optional, floating icons) -->
+  <aside>
+    <ul>
+      <li>✈️</li>
+      <li>🛰️</li>
+      <li>🌤️</li>
+      <li>📡</li>
+      <li>💡</li>
+    </ul>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- DASHBOARD -->
+    <section id="dashboard">
+      <h2>Flight Overview</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Active Flights</h3>
+          <p>152 flights in the sky</p>
+        </div>
+        <div class="card">
+          <h3>Delays</h3>
+          <p>23 delayed flights</p>
+        </div>
+        <div class="card">
+          <h3>Next Arrival</h3>
+          <p>Flight CX112 arriving in 47 min</p>
+        </div>
       </div>
     </section>
 
-    <footer class="site-footer">
-      &copy; 2025 Cirra. All rights reserved.
-    </footer>
-  </div>
+    <!-- FLIGHTS TABLE -->
+    <section id="flights">
+      <h2>Flight Tracker</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Flight</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Status</th>
+            <th>Gate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AA101</td>
+            <td>JFK</td>
+            <td>LAX</td>
+            <td class="on-time">On Time</td>
+            <td>A12</td>
+          </tr>
+          <tr>
+            <td>DL404</td>
+            <td>ATL</td>
+            <td>ORD</td>
+            <td class="delayed">Delayed</td>
+            <td>B07</td>
+          </tr>
+          <tr>
+            <td>UA221</td>
+            <td>SFO</td>
+            <td>SEA</td>
+            <td class="on-time">On Time</td>
+            <td>C03</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- WEATHER SECTION -->
+    <section id="weather">
+      <h2>Weather</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>JFK</h3>
+          <p>Cloudy, 18°C</p>
+        </div>
+        <div class="card">
+          <h3>LAX</h3>
+          <p>Sunny, 24°C</p>
+        </div>
+        <div class="card">
+          <h3>ORD</h3>
+          <p>Rainy, 15°C</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AIRPORT STATUS -->
+    <section id="airports">
+      <h2>Airport Status</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>JFK</h3>
+          <p>All runways open</p>
+        </div>
+        <div class="card">
+          <h3>LAX</h3>
+          <p>Security wait: 25 min</p>
+        </div>
+        <div class="card">
+          <h3>ORD</h3>
+          <p>Runway 2 closed</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIPS -->
+    <section id="tips">
+      <h2>Travel Tips</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Pack Smart</h3>
+          <p>Check weather and pack accordingly.</p>
+        </div>
+        <div class="card">
+          <h3>Check-in Early</h3>
+          <p>Save time and avoid long queues.</p>
+        </div>
+        <div class="card">
+          <h3>Flight Apps</h3>
+          <p>Track flights in real-time with Cirra.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Cirra. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
