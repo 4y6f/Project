@@ -1,14 +1,55 @@
 body {
+  font-family: system-ui, Arial, sans-serif;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #0c0c0c;
-  color: #f0f0f0;
+  background-color: #0d0d0d;
+  color: #f1f1f1;
   overflow-x: hidden;
 }
 
-a {
-  text-decoration: none;
-  color: #8ab4f8;
+.locked #site-root {
+  display: none;
+}
+
+#lock-overlay {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lock-container {
+  background: #1a1a1a;
+  padding: 3rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 0 20px #0ff;
+}
+
+.lock-container input {
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  width: 70%;
+  background: #111;
+  color: #f1f1f1;
+}
+
+.lock-container button {
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: #00ffff;
+  color: #0d0d0d;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ffff66;
 }
 
 header {
@@ -16,243 +57,198 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
-  background-color: #111;
-  border-bottom: 1px solid #222;
+  background: #0a0a0a;
 }
 
 header .logo {
-  font-weight: bold;
   font-size: 1.5rem;
-  color: #8ab4f8;
+  font-weight: bold;
+  color: #0ff;
+  text-shadow: 0 0 6px #00ffff77;
 }
 
 header nav a {
-  margin-left: 2rem;
-  font-weight: 500;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #f1f1f1;
+  transition: 0.3s;
 }
 
-#hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4rem 3rem;
-  background: linear-gradient(to bottom, #0c0c0c 0%, #111 100%);
+header nav a:hover {
+  color: #0ff;
+  text-shadow: 0 0 4px #00ffff77;
 }
 
-.hero-text h1 {
-  font-size: 3rem;
-  margin: 0 0 1rem 0;
-  color: #8ab4f8;
-}
-
-.hero-text p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #ccc;
-}
-
-.hero-buttons button {
-  padding: 0.8rem 1.6rem;
-  margin-right: 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.2s;
-}
-
-.hero-buttons .primary {
-  background-color: #8ab4f8;
-  color: #0c0c0c;
-}
-
-.hero-buttons .primary:hover {
-  background-color: #a0c5ff;
-}
-
-.hero-buttons .secondary {
-  background-color: #222;
-  color: #8ab4f8;
-}
-
-.hero-buttons .secondary:hover {
-  background-color: #333;
-}
-
-#features {
-  padding: 4rem 3rem;
-}
-
-#features h2 {
+.hero {
   text-align: center;
-  margin-bottom: 3rem;
-  color: #8ab4f8;
+  padding: 6rem 2rem;
+  background: linear-gradient(to bottom, #111, #0d0d0d);
+  position: relative;
 }
 
-.feature-cards {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.2;
 }
 
-.card {
-  background-color: #111;
-  padding: 2rem;
-  border-radius: 12px;
-  flex: 1 1 30%;
-  min-width: 280px;
-  box-shadow: 0 0 15px rgba(138, 180, 248, 0.2);
-  transition: transform 0.2s;
+.hero .neon {
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff33, 0 0 20px #0ff66;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h3 {
+.hero p {
   margin-top: 1rem;
-  color: #8ab4f8;
+  font-size: 1.2rem;
+  color: #ccc;
 }
 
-.card p {
-  margin-top: 0.5rem;
-  color: #ccc;
+.hero-buttons {
+  margin-top: 2rem;
+}
+
+button.primary {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: #0ff;
+  color: #0d0d0d;
+  font-weight: bold;
+  margin-right: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px #0ff44;
+  transition: 0.3s;
+}
+
+button.primary:hover {
+  box-shadow: 0 0 25px #0ff77;
+}
+
+button.secondary {
+  padding: 0.8rem 2rem;
+  border: 2px solid #0ff;
+  border-radius: 0.6rem;
+  background: transparent;
+  color: #0ff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button.secondary:hover {
+  background: #0ff11;
+  box-shadow: 0 0 15px #0ff44;
+}
+
+.floating-plane {
+  width: 50px; height: 50px;
+  background: url('https://cdn-icons-png.flaticon.com/512/69/69524.png') no-repeat center/contain;
+  position: absolute;
+  right: 5%;
+  top: 20%;
+  animation: floatPlane 6s infinite alternate ease-in-out;
+}
+
+@keyframes floatPlane {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-20px) rotate(-5deg); }
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 4rem 2rem;
+  gap: 1rem;
+}
+
+.feature-card {
+  background: #111;
+  padding: 2rem;
+  border-radius: 1rem;
+  flex: 1;
+  box-shadow: 0 0 15px #0ff11;
+  text-align: center;
+}
+
+.feature-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0ff;
+}
+
+.airport-preview {
+  padding: 4rem 2rem;
 }
 
 .airport-cards {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 0 3rem;
+  justify-content: space-around;
+  gap: 1rem;
 }
 
 .airport-card {
-  background-color: #111;
-  flex: 1 1 30%;
-  min-width: 250px;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(138, 180, 248, 0.2);
-}
-
-.airport-card h3 {
-  color: #8ab4f8;
-}
-
-#tracking {
-  display: flex;
-  padding: 4rem 3rem;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.tracking-left {
-  flex: 1;
-  min-width: 300px;
-}
-
-.tracking-left h2 {
-  color: #8ab4f8;
-}
-
-.tracking-left p {
-  color: #ccc;
-  margin-bottom: 1.5rem;
-}
-
-.tracker-graphic {
-  background-color: #111;
-  border-radius: 12px;
-  width: 100%;
-  height: 250px;
-  box-shadow: 0 0 15px rgba(138, 180, 248, 0.3);
-}
-
-#cta {
-  background-color: #111;
+  background: #111;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 250px;
+  box-shadow: 0 0 10px #0ff22;
   text-align: center;
-  padding: 3rem 1rem;
-  border-top: 1px solid #222;
 }
 
-#cta h2 {
-  color: #8ab4f8;
-  margin-bottom: 1.5rem;
+.flight-tracking {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  gap: 2rem;
 }
 
-#cta button {
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 8px;
-  background-color: #8ab4f8;
-  color: #0c0c0c;
-  font-weight: 600;
-  cursor: pointer;
+.flight-tracking .tracking-left {
+  flex: 1;
+}
+
+.flight-tracking .tracking-right {
+  flex: 1;
+}
+
+.mock-tracker {
+  background: #111;
+  height: 250px;
+  border-radius: 1rem;
+  position: relative;
+  box-shadow: 0 0 10px #0ff22;
+}
+
+.plane-path {
+  width: 50px;
+  height: 50px;
+  background: url('https://cdn-icons-png.flaticon.com/512/69/69524.png') no-repeat center/contain;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  animation: fly 5s infinite alternate ease-in-out;
+}
+
+@keyframes fly {
+  0% { left: 0; transform: rotate(0deg); }
+  100% { left: calc(100% - 50px); transform: rotate(10deg); }
+}
+
+.cta {
+  background: #0ff11;
+  color: #0d0d0d;
+  text-align: center;
+  padding: 2rem;
 }
 
 footer {
-  background-color: #111;
-  padding: 2rem 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  border-top: 1px solid #222;
-}
-
-.footer-links a {
-  margin: 0 1rem;
-  color: #8ab4f8;
-}
-
-#lock-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #0c0c0c;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.lock-container {
-  background-color: #111;
-  padding: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(138, 180, 248, 0.3);
+  background: #0a0a0a;
+  padding: 1rem 2rem;
   text-align: center;
+  font-size: 0.9rem;
+  color: #ccc;
 }
 
-.lock-container input {
-  padding: 0.8rem 1rem;
-  width: 100%;
-  margin: 1rem 0;
-  border-radius: 8px;
-  border: none;
-  background-color: #222;
-  color: #fff;
-}
-
-.lock-container button {
-  padding: 0.8rem 1.5rem;
-  margin: 0.5rem;
-  border: none;
-  border-radius: 8px;
-  background-color: #8ab4f8;
-  color: #0c0c0c;
-  cursor: pointer;
-}
-
-.lock-container button:hover {
-  background-color: #a0c5ff;
-}
-
-.lock-container p {
-  color: #f55;
-  margin-top: 1rem;
+footer .footer-logo {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  color: #0ff;
 }
