@@ -1,60 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cirra</title>
-  <link rel="stylesheet" href="styling.css">
-  <script src="index.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cirra</title>
+<link rel="stylesheet" href="styling.css">
 </head>
 <body class="locked">
-  <div id="lock-overlay">
-    <div id="lock-box">
-      <h2>Enter your access code</h2>
-      <input id="password" type="password" placeholder="Access Code" autocomplete="off">
-      <div class="btn-row">
-        <button id="unlockBtn"><strong>Submit</strong></button>
-        <button id="cancelBtn"><strong>Cancel</strong></button>
+<div id="lock-overlay">
+  <div class="lock-container">
+    <h1>Cirra Access</h1>
+    <input type="password" id="password" placeholder="Enter Access Code">
+    <button id="unlockBtn">Unlock</button>
+    <button id="cancelBtn">Cancel</button>
+    <p id="msg"></p>
+  </div>
+</div>
+
+<div id="site-root" style="display:none;">
+  <header>
+    <div class="logo">Cirra</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#airports">Airports</a>
+      <a href="#tracking">Flight Tracking</a>
+      <a href="#about">About</a>
+      <a href="#login">Login</a>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <div class="hero-text">
+      <h1>Cirra — Your All-In-One Wingman.</h1>
+      <p>Helping you navigate airports, track flights, and stay oriented in the sky.</p>
+      <div class="hero-buttons">
+        <button class="primary">Track a Flight</button>
+        <button class="secondary">Find an Airport</button>
       </div>
-      <div id="msg"></div>
     </div>
-  </div>
+    <div class="hero-graphic"></div>
+  </section>
 
-  <div id="site-root">
-    <aside id="sidebar">
-      <button data-page="dashboard">Dashboard</button>
-      <button data-page="flights">Flights</button>
-      <button data-page="airports">Airports</button>
-      <button data-page="maps">Maps</button>
-      <button data-page="tips">Tips</button>
-    </aside>
+  <section id="features">
+    <h2>What Cirra Does</h2>
+    <div class="feature-cards">
+      <div class="card">
+        <div class="icon airport-icon"></div>
+        <h3>Airport Navigation</h3>
+        <p>Find gates, lounges, checkpoints, and amenities with clear, map-style guidance.</p>
+      </div>
+      <div class="card">
+        <div class="icon flight-icon"></div>
+        <h3>Flight Tracking</h3>
+        <p>Real-time flight status, delays, departures, and arrivals across major airlines.</p>
+      </div>
+      <div class="card">
+        <div class="icon compass-icon"></div>
+        <h3>Travel Assistance</h3>
+        <p>Quick access to airport tips, travel alerts, and smooth-journey planning.</p>
+      </div>
+    </div>
+  </section>
 
-    <main>
-      <header>
-        <h1>Cirra</h1>
-        <p>Your all-in-one wingman.</p>
-      </header>
+  <section id="airports">
+    <h2>Popular Airports</h2>
+    <div class="airport-cards">
+      <div class="airport-card">
+        <h3>LAX</h3>
+        <p>Los Angeles International Airport</p>
+        <button>View Details</button>
+      </div>
+      <div class="airport-card">
+        <h3>JFK</h3>
+        <p>John F. Kennedy International Airport</p>
+        <button>View Details</button>
+      </div>
+      <div class="airport-card">
+        <h3>LHR</h3>
+        <p>London Heathrow Airport</p>
+        <button>View Details</button>
+      </div>
+    </div>
+  </section>
 
-      <section id="cards">
-        <div class="card">
-          <h3>Flight Delays</h3>
-          <div class="chart-placeholder">[Chart]</div>
-        </div>
-        <div class="card">
-          <h3>Active Flights</h3>
-          <div class="chart-placeholder">[Chart]</div>
-        </div>
-        <div class="card">
-          <h3>Airports Status</h3>
-          <div class="chart-placeholder">[Chart]</div>
-        </div>
-        <div class="card">
-          <h3>Weather Overview</h3>
-          <div class="chart-placeholder">[Chart]</div>
-        </div>
-      </section>
+  <section id="tracking">
+    <div class="tracking-left">
+      <h2>Track Any Flight Instantly.</h2>
+      <p>Stay updated with live departure times, delays, gate changes, and arrival info.</p>
+      <button>Start Tracking</button>
+    </div>
+    <div class="tracking-right">
+      <div class="tracker-graphic"></div>
+    </div>
+  </section>
 
-    </main>
-  </div>
+  <section id="cta">
+    <h2>Ready for smoother travels?</h2>
+    <button>Get Started</button>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+    </div>
+    <div class="footer-logo">✈</div>
+  </footer>
+</div>
+
+<script src="index.js" type="module"></script>
 </body>
 </html>
