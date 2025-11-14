@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cirra</title>
+  <title>Cirra - Your all-in-one wingman</title>
   <link rel="stylesheet" href="/styling.css">
   <script src="/index.js" defer></script>
 </head>
@@ -36,9 +36,11 @@
 
   <!-- MAIN CONTENT -->
   <main id="site-root">
+
+    <!-- HERO SECTION -->
     <section class="hero">
       <h2>Welcome to Cirra</h2>
-      <p>Track flights, airports, and aviation info all in one place.</p>
+      <p>Your all-in-one wingman for aviation info.</p>
       <div class="hero-buttons">
         <a href="/maps" class="btn">Maps</a>
         <a href="/airports" class="btn">Airports</a>
@@ -46,12 +48,38 @@
       </div>
     </section>
 
+    <!-- DASHBOARD CARDS -->
     <section class="dashboard">
-      <div class="card">📊 Flight Delays<br>Placeholder data</div>
-      <div class="card">🛬 Popular Airports<br>Placeholder data</div>
-      <div class="card">🗺️ Quick Map<br>Placeholder data</div>
+      <div class="card">
+        <h3>📊 Flight Delays</h3>
+        <ul>
+          <li>Flight AB123 - Delayed 20min</li>
+          <li>Flight XY987 - On Time</li>
+          <li>Flight CD456 - Delayed 45min</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🛬 Popular Airports</h3>
+        <ul>
+          <li>JFK - New York</li>
+          <li>LAX - Los Angeles</li>
+          <li>ORD - Chicago</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🗺️ Quick Map</h3>
+        <div class="placeholder-map">[Map Placeholder]</div>
+      </div>
+      <div class="card">
+        <h3>💡 Tips</h3>
+        <ul>
+          <li>Arrive 2 hours early for international flights</li>
+          <li>Check terminal info before arriving</li>
+          <li>Use Cirra to track flights easily</li>
+        </ul>
+      </div>
     </section>
-  </main>
 
+  </main>
 </body>
 </html>
