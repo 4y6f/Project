@@ -175,4 +175,14 @@ footer {
   aside {
     display: none;
   }
+
+  .plane {
+  position: fixed;
+  top: 20%;
+  left: 0;
+  font-size: 2rem;
+  pointer-events: none;
+  z-index: 999;
+}
+
 }
