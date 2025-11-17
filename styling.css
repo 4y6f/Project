@@ -101,7 +101,7 @@ header nav a:hover {
   font-weight: bold;
   transition: 0.3s;
 }
-
+/* hero text */
 .hero-buttons .primary {
   background: #7dd3fc;
   color: #0a0a0a;
@@ -111,7 +111,7 @@ header nav a:hover {
 .hero-buttons .primary:hover {
   box-shadow: 0 0 20px #7dd3fc;
 }
-
+/* duo was here */
 .hero-buttons .secondary {
   background: transparent;
   color: #7dd3fc;
@@ -233,7 +233,7 @@ header nav a:hover {
   text-align: center;
   padding: 2rem;
 }
-
+/* call to action thing */
 .cta button {
   margin-top: 1rem;
   padding: 0.8rem 2rem;
@@ -257,3 +257,4 @@ footer .footer-logo {
   font-size: 1.5rem;
   margin-top: 0.5rem;
 }
+/* made with <3 by duo */
