@@ -1,3 +1,4 @@
+// If you're looking for the password it aint here
 const overlay = document.getElementById('lock-overlay');
 const pwInput = document.getElementById('password');
 const msg = document.getElementById('msg');
