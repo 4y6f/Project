@@ -53,8 +53,6 @@ header {
   align-items: center;
   padding: 1rem 3rem;
   background: #111;
-  text-shadow: 0 0 10px #7dd3fc, 0 0 13px #7dd3fc;
-
 }
 
 header .logo {
