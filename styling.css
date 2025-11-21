@@ -1,4 +1,4 @@
-/* wow this makes stuff stylish :0 */
+/* beauty machineeeeeeee */
 body {
   margin: 0;
   font-family: system-ui, Arial, sans-serif;
@@ -70,6 +70,7 @@ header nav a {
 
 header nav a:hover {
   color: #0af;
+  text-shadow: 0 0 10px #7dd3fc, 0 0 13px #7dd3fc;
 }
 
 .hero {
@@ -85,7 +86,7 @@ header nav a:hover {
 
 .neon {
   color: #7dd3fc;
-  text-shadow: 0 0 3px #7dd3fc, 0 0 2px #7dd3fc;
+  text-shadow: 0 0 30px #7dd3fc, 0 0 20px #7dd3fc;
 }
 
 .hero p {
@@ -134,12 +135,13 @@ header nav a:hover {
   width: 260px;
   text-align: center;
   box-shadow: 0 0 15px rgba(125,211,252,0.3);
-  transition: transform 0.3s;
+  transition: 0.3s;
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(125,211,252,0.5);
+  box-shadow: 0 0 30px #7dd3fc, 0 0 20px #7dd3fc;
+  transition: 0.3s;
 }
 
 .airport-preview {
@@ -160,7 +162,13 @@ header nav a:hover {
   border-radius: 12px;
   width: 220px;
   box-shadow: 0 0 15px rgba(125,211,252,0.3);
-  transition: transform 0.3s;
+  transition: 0.3s;
+}
+
+.airport-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px #7dd3fc, 0 0 20px #7dd3fc;
+  transition: 0.3s;
 }
 
 .airport-card button {
@@ -196,9 +204,17 @@ header nav a:hover {
   font-weight: bold;
 }
 
+@keyframes tracker-fly {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); }
+  25% { transform: translateX(50px) translateY(-5px) rotate(5deg); }
+  50% { transform: translateX(100px) translateY(0px) rotate(0deg); }
+  75% { transform: translateX(150px) translateY(5px) rotate(-5deg); }
+  100% { transform: translateX(200px) translateY(0px) rotate(0deg); }
+}
+
 .calltoaction {
-  background: #0af;
-  color: #7dd3fc;
+  background: rgb(16, 55, 74);
+  color: #ffffff;
   text-align: center;
   padding: 2rem;
 }
@@ -212,18 +228,25 @@ header nav a:hover {
   color: #7dd3fc;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0 10px #7dd3fc;
+  box-shadow: 0 0 100px #94ddff;
+  transition: 0.9s;
+}
+
+.calltoaction button:hover {
+  box-shadow: 0 0 160px #7dd3fc, 0 0 140px #7dd3fc;
+  transition: 0.9s;
 }
 
 footer {
   background: #111;
   text-align: center;
   padding: 1rem;
-  color: #7dd3fc;
+  color: #ffffff;
 }
 
 footer .footer-logo {
   font-size: 1.5rem;
   margin-top: 0.5rem;
 }
-/* duo is king trust */
+/* duo */
+/* 4y6f */
