@@ -57,3 +57,20 @@ function unlock() {
     siteRoot.style.opacity = '1';
   }, 600);
 }
+
+async function TrackFlight() {
+  try {
+    const response = await fetch('/track', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({flight: value.trim()})
+    });
+
+    const data = await response.json();
+
+    if (data.ok) unlock();
+    else fail();
+  } catch {
+    fail();
+  }
+}
