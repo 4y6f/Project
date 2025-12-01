@@ -1,4 +1,3 @@
-/* beauty machineeeeeeee */
 body {
   margin: 0;
   font-family: system-ui, Arial, sans-serif;
@@ -86,7 +85,7 @@ header nav a:hover {
 
 .neon {
   color: #7dd3fc;
-  text-shadow: 0 0 30px #7dd3fc, 0 0 20px #7dd3fc;
+  text-shadow: 0 0 50px #7dd3fc, 0 0 75px #7dd3fc;
 }
 
 .hero p {
@@ -188,13 +187,14 @@ header nav a:hover {
   justify-content: center;
   padding: 3rem 1rem;
   gap: 2rem;
+  text-align: center;
 }
 
 .tracking-left {
   flex: 1 1 300px;
 }
 
-.tracking-left button {
+.tracking button {
   padding: 0.8rem 2rem;
   border-radius: 10px;
   border: none;
@@ -202,6 +202,14 @@ header nav a:hover {
   color: #0a0a0a;
   cursor: pointer;
   font-weight: bold;
+  box-shadow: 0 0 10px #7dd3fc, 0 0 20px #7dd3fc;
+  transition: 0.9s;
+}
+
+.tracking button:hover {
+  box-shadow: 0 0 60px #7dd3fc, 0 0 20px #98dbfa;
+  transition: 0.9s;
+
 }
 
 @keyframes tracker-fly {
@@ -248,5 +256,3 @@ footer .footer-logo {
   font-size: 1.5rem;
   margin-top: 0.5rem;
 }
-/* duo */
-/* 4y6f */
