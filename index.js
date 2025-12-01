@@ -1,4 +1,5 @@
-// If you're looking for the password it aint here
+// If you're looking for the password its env so good luck 
+// - duo
 const overlay = document.getElementById('lock-overlay');
 const pwInput = document.getElementById('password');
 const msg = document.getElementById('msg');
@@ -30,14 +31,14 @@ async function checkPw() {
 
     const data = await response.json();
 
-    if (data.ok) unlock();
-    else fail();
+    if (data.ok) QxOMJGZrKotRUhZ3S();
+    else lmEUKseksEXX0B2oH();
   } catch {
-    fail();
+    lmEUKseksEXX0B2oH();
   }
 }
 
-function fail() {
+function lmEUKseksEXX0B2oH() {
   tries++;
   msg.textContent = `Access Code invalid. (${maxTries - tries} attempts remaining.)`;
   pwInput.value = '';
@@ -47,7 +48,7 @@ function fail() {
   }
 }
 
-function unlock() {
+function QxOMJGZrKotRUhZ3S() {
   overlay.style.transition = 'opacity 0.6s ease';
   overlay.style.opacity = '0';
   setTimeout(() => {
@@ -56,21 +57,4 @@ function unlock() {
     siteRoot.style.display = 'block';
     siteRoot.style.opacity = '1';
   }, 600);
-}
-
-async function TrackFlight() {
-  try {
-    const response = await fetch('/track', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({flight: value.trim()})
-    });
-
-    const data = await response.json();
-
-    if (data.ok) unlock();
-    else fail();
-  } catch {
-    fail();
-  }
 }
