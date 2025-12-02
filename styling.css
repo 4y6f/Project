@@ -25,7 +25,7 @@ body {
   padding: 2rem;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 0 50px #0af;
+  box-shadow: 0 0 120px #0af;
 }
 
 .lock-container input {
