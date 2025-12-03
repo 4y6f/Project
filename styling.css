@@ -44,6 +44,7 @@ body {
   color: #000;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.7s;
 }
 
 .lock-container button:hover {
