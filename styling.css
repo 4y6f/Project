@@ -46,6 +46,10 @@ body {
   cursor: pointer;
 }
 
+.lock-container button hover {
+    box-shadow: 0 0 60px #7dd3fc, 0 0 20px #98dbfa;
+}
+
 header {
   display: flex;
   justify-content: space-between;
