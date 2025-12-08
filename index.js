@@ -1,5 +1,4 @@
-// If you're looking for the password its env so good luck 
-// - duo
+// If you're looking for the password it isnt here
 const overlay = document.getElementById('lock-overlay');
 const pwInput = document.getElementById('password');
 const msg = document.getElementById('msg');
@@ -40,7 +39,7 @@ async function checkPw() {
 
 function lmEUKseksEXX0B2oH() {
   tries++;
-  msg.textContent = `Access Code invalid. (${maxTries - tries} attempts remaining.)`;
+  msg.textContent = `Access Code invalid. (${maxTries - tries} attempts remaining!)`;
   pwInput.value = '';
   if (tries >= maxTries) {
     msg.textContent = `You've reached the attempt limit. Redirecting.`;
@@ -58,3 +57,10 @@ function QxOMJGZrKotRUhZ3S() {
     siteRoot.style.opacity = '1';
   }, 600);
 }
+
+function showConsoleWarning() {
+  console.log("%cWARNING:", "color: red; font-size: 300%;");
+    console.log("The browser console is a developer tool and is not intended for use by regular users. DO NOT copy and paste any code in this window unless you understand what it does and trust the developer.");
+}
+
+showConsoleWarning();
