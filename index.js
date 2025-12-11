@@ -72,7 +72,7 @@ document.querySelectorAll("button.primary").forEach(btn => {
       if (!flight) return;
 
       try {
-        const res = await fetch(`/TRACKER?flight=${flight}`);
+        const res = await fetch(`/track?flight=${flight}`);
         if (!res.ok) throw new Error("Flight not found or API error");
 
         const text = await res.text();
