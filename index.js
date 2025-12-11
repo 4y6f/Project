@@ -64,3 +64,14 @@ function showConsoleWarning() {
 }
 
 showConsoleWarning();
+
+document.querySelectorAll("button.primary").forEach(btn => {
+  if (btn.textContent.includes("Track")) {
+    btn.addEventListener("click", () => {
+      document.getElementById("trackerModal").style.display = "flex";
+    });
+  }
+});
+
+document.getElementById("closeTracker").addEventListener("click", () => {
+  document.getElementById("trackerModal").style.display = "none";
