@@ -66,24 +66,20 @@ function showConsoleWarning() {
 showConsoleWarning();
 
 document.querySelectorAll("button.primary").forEach(btn => {
-  if (btn.textContent.includes("Track")) {
-    btn.addEventListener("click", () => {
-      document.getElementById("trackerModal").style.display = "flex";
+  if (btn.textContent.toLowerCase().includes("track")) {
+    btn.addEventListener("click", async () => {
+      const flight = window.prompt("Enter flight number (e.g. AA100):");
+      if (!flight) return;
+
+      try {
+        const res = await fetch(`/TRACKER?flight=${flight}`);
+        if (!res.ok) throw new Error("Flight not found or API error");
+
+        const text = await res.text();
+        alert(text);
+      } catch (err) {
+        alert("Error fetching flight info: " + err.message);
+      }
     });
   }
 });
-
-document.getElementById("closeTracker").addEventListener("click", () => {
-  document.getElementById("trackerModal").style.display = "none";
-});
-document.getElementById("trackSearchBtn").addEventListener("click", async () => {
-  const flight = document.getElementById("trackInput").value.trim();
-  if (!flight) return alert("Enter a flight number");
-
-  const res = await fetch(`/TRACKER?flight=${flight}`);
-  const text = await res.text();
-
-  document.getElementById("trackResult").textContent = text;
-});
-  
-                                                         
