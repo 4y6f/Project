@@ -1,6 +1,6 @@
 export async function onRequest(context) {
   const flight = context.request.url.split("flight=")[1] || "";
-  const apiKey = context.env.API_KEY;  // FIX: context.env not context.end
+  const apiKey = context.env.API_KEY;
 
   if (!flight)
     return new Response("No flight provided.", { status: 400 });
