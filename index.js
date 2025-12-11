@@ -75,7 +75,7 @@ document.querySelectorAll("button.primary").forEach(btn => {
 
 document.getElementById("closeTracker").addEventListener("click", () => {
   document.getElementById("trackerModal").style.display = "none";
-}
+});
 document.getElementById("trackSearchBtn").addEventListener("click", async () => {
   const flight = document.getElementById("trackInput").value.trim();
   if (!flight) return alert("Enter a flight number");
